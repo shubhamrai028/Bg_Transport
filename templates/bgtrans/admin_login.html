@@ -1,0 +1,37 @@
+<html>
+<body>
+<table align="center">
+    <tr>
+        <th style="font-size: 70px" height="100">B.G Transport Company</th>
+    </tr>
+    <tr>
+        <th height="50" style="font-size: 30px">Welcome to the Admin Page</th>
+    </tr>
+
+</table>
+<form action="{% url 'adminlogin_check' %}" method="post">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th height="50">
+            Username:<input type="text" required name="admin_username">
+        </th>
+    </tr>
+        <tr>
+        <th>
+            Password:<input type="password" required name="admin_password">
+        </th>
+    </tr>
+    <tr>
+        <th height="30"><button type="submit">Login</button> </th>
+    </tr>
+    <tr><th>
+        {% for x in m %}
+            {{ x }}
+        {% endfor %}
+    </th>
+    </tr>
+</table>
+    </form>
+</body>
+</html>
